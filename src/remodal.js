@@ -1,14 +1,4 @@
-!(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(['jquery'], function($) {
-      return factory(root, $);
-    });
-  } else if (typeof exports === 'object') {
-    factory(root, require('jquery'));
-  } else {
-    factory(root, root.jQuery || root.Zepto);
-  }
-})(this, function(global, $) {
+!(function(global, $) {
 
   'use strict';
 
@@ -773,4 +763,5 @@
     // Handles the hashchange event
     $(window).on('hashchange.' + NAMESPACE, handleHashChangeEvent);
   });
-});
+})(window, jQuery);
+
